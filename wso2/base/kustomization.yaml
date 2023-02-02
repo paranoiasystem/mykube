@@ -1,0 +1,4 @@
+resources:
+  - mysql/conf/my.cnf.yaml
+  - mysql/service.yaml
+  - mysql/statefulset.yaml

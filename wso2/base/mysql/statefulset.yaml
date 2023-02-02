@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: wso2-db
+spec:
+  serviceName: wso2-db-service
+  selector:
+    matchLabels:
+      app: wso2-db
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: wso2-db
+    spec:
+      containers:
+        - name: wso2-db
+          image: mysql:5.7
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: password
+    volumeMounts:
+      - name: mysql-conf
+        ConfigMap:
+          name: mysql-wso2-conf
+          items:
+            - key: my.cnf
+        mountPath: /etc/mysql/my.cnf
