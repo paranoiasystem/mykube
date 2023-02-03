@@ -13,7 +13,3 @@ spec:
             name: whoami
             port:
               name: web
-status:
-  loadBalancer:
-    ingress:
-    - {}
