@@ -1,0 +1,4 @@
+resources:
+  - whoami.yml
+  - whoami-services.yml
+  - whoami-ingress.yml
