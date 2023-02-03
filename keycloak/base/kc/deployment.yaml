@@ -17,7 +17,16 @@ spec:
       containers:
         - name: keycloak
           image: quay.io/keycloak/keycloak:20.0.2
-          args: ["start-dev", "--hostname-path=/iam", "--proxy passthrough", "--hostname-strict=false"]
+          args:
+            [
+              "start-dev"
+              # "start-dev",
+              # "--hostname-path=/iam",
+              # "--proxy passthrough",
+              # "--hostname-strict=false",
+              # "--hostname-url=http://localhost",
+              # "--http-relative-path=/iam",
+            ]
           env:
             - name: KEYCLOAK_ADMIN
               value: "admin"
