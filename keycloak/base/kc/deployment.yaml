@@ -17,7 +17,7 @@ spec:
       containers:
         - name: keycloak
           image: quay.io/keycloak/keycloak:20.0.2
-          args: ["start-dev", "--hostname-url=http://localhost/iam", "--proxy passthrough", "--hostname-strict=false"]
+          args: ["start-dev", "--hostname-path=/iam", "--proxy passthrough", "--hostname-strict=false"]
           env:
             - name: KEYCLOAK_ADMIN
               value: "admin"
@@ -33,6 +33,8 @@ spec:
               value: "postgres"
             - name: DB_PASSWORD
               value: "password"
+            - name: PROXY_ADDRESS_FORWARDING
+              value: "true"
           ports:
             - name: http
               containerPort: 8080
