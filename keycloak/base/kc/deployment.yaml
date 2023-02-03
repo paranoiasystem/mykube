@@ -19,9 +19,8 @@ spec:
           image: quay.io/keycloak/keycloak:20.0.2
           args:
             [
-              "start-dev"
-              # "start-dev",
-              # "--hostname-path=/iam",
+              "start-dev",
+              "--hostname-path=/iam",
               # "--proxy passthrough",
               # "--hostname-strict=false",
               # "--hostname-url=http://localhost",
