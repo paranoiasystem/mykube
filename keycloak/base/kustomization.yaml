@@ -3,3 +3,4 @@ resources:
   - pg/statefulset.yaml
   - kc/service.yaml
   - kc/deployment.yaml
+  - kc/ingress.yaml
